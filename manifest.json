@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+
+    "name": "YouLoop!",
+    "icons": { "128": "icon_128.png" },
+    "description": "This extension allows you to play a video forever.",
+    "version": "1.0",
+
+    "content_scripts": [{
+        "matches": ["*://*.youtube.com/watch*"],
+        "js": ["YouLoop.js"],
+        "run_at": "document_end"
+    }],
+    "web_accessible_resources": [
+        "icon.png"
+    ]
+}
