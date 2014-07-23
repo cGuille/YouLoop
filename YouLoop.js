@@ -27,29 +27,22 @@
     elt_youloop.enable = function () {
         this.style.backgroundPosition = 'top';
         this.title = BTN_TOOLTIP_NON_CLICKABLE;
-        this.enabled = true;
     };
     elt_youloop.disable = function () {
         this.style.backgroundPosition = 'bottom';
         this.title = BTN_TOOLTIP_CLICKABLE;
-        this.enabled = false;
     };
-    elt_youloop.switchEnable = function () {
-        elt_youloop.enabled ? elt_youloop.disable() : elt_youloop.enable();
-    }
+
     elt_youloop.addEventListener('click', function () {
-        elt_youloop.switchEnable();
-        if (elt_video.paused && elt_youloop.enabled) {
-            elt_video.play();
+        if (elt_video.hasAttribute('loop')) {
+            elt_youloop.disable();
+            elt_video.removeAttribute('loop');
+        } else {
+            elt_youloop.enable();
+            elt_video.setAttribute('loop', '');
         }
     }, false);
 
     elt_youloop.disable();
     elt_youloop.style.cursor = 'pointer';
-
-    elt_video.addEventListener('ended', function () {
-        if (elt_youloop.enabled) {
-            elt_video.play();
-        }
-    }, false);
 }());
