@@ -26,6 +26,6 @@ Google does not allow Windows users to install extensions from elsewhere than th
 
 Sometimes, the YouLoop button does not appear next to the video title. It seems that the YouLoop script is somehow not loaded. Just reloading the page should make the button come.
 
-## The button appear but it is crossed and it won't work
+## The button appears but it is crossed and won't work
 
 It means that the video you are watching is not using the HTML5 browser feature. See [the related YouTube page](https://www.youtube.com/html5).
